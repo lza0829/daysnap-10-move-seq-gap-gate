@@ -4,6 +4,7 @@ import 台面 from "./pages/台面.jsx";
 import 账户册 from "./pages/账户册.jsx";
 import 变动流水 from "./pages/变动流水.jsx";
 import 日终抽取 from "./pages/日终抽取.jsx";
+import 序缺口闸 from "./pages/序缺口闸.jsx";
 import 周期快照 from "./pages/周期快照.jsx";
 import 回放核对 from "./pages/回放核对.jsx";
 import 差额清单 from "./pages/差额清单.jsx";
@@ -16,6 +17,7 @@ const 主链 = [
   ["/账户册", "① 账户册"],
   ["/变动流水", "② 变动流水"],
   ["/日终抽取", "③ 日终抽取"],
+  ["/序缺口闸", "序缺口闸"],
   ["/周期快照", "④ 周期快照"],
   ["/回放核对", "⑤ 回放核对"],
   ["/差额清单", "差额清单"],
@@ -53,6 +55,7 @@ export default function App() {
           <Route path="/账户册" element={<账户册 />} />
           <Route path="/变动流水" element={<变动流水 />} />
           <Route path="/日终抽取" element={<日终抽取 />} />
+          <Route path="/序缺口闸" element={<序缺口闸 />} />
           <Route path="/周期快照" element={<周期快照 />} />
           <Route path="/回放核对" element={<回放核对 />} />
           <Route path="/差额清单" element={<差额清单 />} />

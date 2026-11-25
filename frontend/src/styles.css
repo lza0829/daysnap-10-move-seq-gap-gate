@@ -152,10 +152,20 @@ th { color: var(--淡); font-weight: 600; background: var(--块深) }
 }
 .徽章.通 { background: var(--通底); color: var(--通) }
 .徽章.败 { background: var(--败底); color: var(--败) }
+.徽章.旁 { background: var(--焰弱); color: var(--焰) }
+.徽章.灰 { background: var(--块深); color: var(--淡) }
+.核证格 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.55rem; margin: 0.6rem 0 1rem }
+.核证格 .格 { background: var(--块); border: 1px solid var(--线); border-radius: 10px; padding: 0.6rem 0.7rem }
+.核证格 .格 .k { font-size: 0.72rem; color: var(--淡); letter-spacing: 0.05em }
+.核证格 .格 .v { font-size: 1.02rem; font-weight: 700; margin-top: 0.15rem; word-break: break-all }
+.格.好 .v { color: var(--通) }
+.格.坏 .v { color: var(--败) }
+.格.警 .v { color: var(--焰) }
 .段 { margin-top: 1.25rem }
 .段题 { font-size: 0.9rem; margin: 0 0 0.55rem; color: var(--水); font-weight: 700 }
 @media (max-width: 860px) {
   .壳 { grid-template-columns: 1fr }
   .轨 { position: relative; height: auto }
   .阶条 { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .核证格 { grid-template-columns: repeat(2, minmax(0, 1fr)) }
 }

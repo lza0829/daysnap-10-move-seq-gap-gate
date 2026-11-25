@@ -50,7 +50,16 @@ export default function 台面() {
         <div className="阶"><div className="序">快照</div><b>{o.快照数 ?? "—"}</b><span>有效行</span></div>
         <div className="阶"><div className="序">差额</div><b>{o.差额行数 ?? "—"}</b><span>清单行</span></div>
         <div className="阶"><div className="序">旁置</div><b>{o.旁置数 ?? "—"}</b><span>未入账</span></div>
+        <div className="阶"><div className="序">旁置镜</div><b>{o.旁置镜数 ?? "—"}</b><span>非有效日终镜</span></div>
+        <div className="阶"><div className="序">序缺口</div><b>{o.序缺口未解除数 ?? "—"}</b><span>未解除</span></div>
       </div>
+      {(o.序缺口未解除数 > 0 || o.旁置日终未晋升数 > 0) ? (
+        <div className="提示条">
+          有 {o.序缺口未解除数 ?? 0} 个未解除序号缺口、{o.旁置日终未晋升数 ?? 0} 面旁置日终镜待晋升；
+          缺口户禁止正式有效镜，回放会拒绝。前往 <Link to="/序缺口闸">序缺口闸</Link> 核证处置，
+          或到 <Link to="/旁置簿">旁置簿</Link> 晋升。
+        </div>
+      ) : null}
       <div className="行">
         <button disabled={忙} onClick={冒烟}>{忙 ? "跑着…" : "一键冒烟"}</button>
         <button className="次" onClick={() => 刷新().catch((e) => set讯(String(e.message || e)))}>刷新总览</button>
